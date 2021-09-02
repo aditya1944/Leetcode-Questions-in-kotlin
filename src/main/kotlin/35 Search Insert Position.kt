@@ -5,13 +5,12 @@ fun searchInsert(nums: IntArray, target: Int): Int {
         val mid = left + (right - left)/2;
         if(nums[mid]==target){
             return mid;
-        }else if(nums[mid]>target){
-            right = mid-1;
-        }else{
+        }else if(nums[mid]<target){
             left = mid+1;
+        }else{
+            right = mid-1;
         }
     }
-    //control reaches here so value is not in array;
     if(target<=nums[left]){
         return left;
     }
