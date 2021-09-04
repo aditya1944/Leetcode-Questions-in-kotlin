@@ -1,16 +1,13 @@
 fun maxProfit(prices: IntArray): Int {
-    var minPrice = Int.MAX_VALUE;
     var maxProfit = 0;
-    prices.forEach {
-        if(it<minPrice){
-            minPrice=it;
-        }else{
-            maxProfit = kotlin.math.max(maxProfit, it - minPrice);
-        }
-    };
+    var buyingPrice = Int.MAX_VALUE;
+    for(currentStockPrice in prices){
+        maxProfit = kotlin.math.max(currentStockPrice - buyingPrice, maxProfit);
+        buyingPrice = kotlin.math.min(buyingPrice, currentStockPrice);
+    }
     return maxProfit;
 }
 
 fun main(){
-    print(maxProfit(intArrayOf(1,2,3,4)))
+    print(maxProfit(intArrayOf(7,1,5,3,6,4)))
 }
