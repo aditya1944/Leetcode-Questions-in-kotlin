@@ -9,6 +9,9 @@ class Solution19 {
     }
 
     fun isSymmetric(root: TreeNode?): Boolean {
+        if(root==null){
+            return true
+        }
         return helper(root.left, root.right)
     }
 
@@ -16,17 +19,16 @@ class Solution19 {
         if(node1==null && node2==null){
             return true
         }
-        val node1Value = node1?.`val`;
+        val node1Value = node1?.`val`
         val node2Value = node2?.`val`
 
         if(node1Value==node2Value){
-
-            return helper(node1.left, )
+            val isLeftTreeSymmetric = helper(node1?.left, node2?.left)
+            val isRightTreeSymmetric = helper(node1?.right, node2?.right)
+            return isLeftTreeSymmetric && isRightTreeSymmetric
 
         }
         return false
-
-
 
     }
 }
