@@ -8,9 +8,9 @@ class Solution19 {
         var right: TreeNode? = null
     }
 
-    fun isSymmetric(root: TreeNode?): Boolean {
+    /*fun isSymmetric(root: TreeNode?): Boolean {
         return helper(root.left, root.right)
-    }
+    }*/
 
     private fun helper(node1: TreeNode?, node2: TreeNode?): Boolean{
         if(node1==null && node2==null){
@@ -19,11 +19,11 @@ class Solution19 {
         val node1Value = node1?.`val`;
         val node2Value = node2?.`val`
 
-        if(node1Value==node2Value){
+        /*if(node1Value==node2Value){
 
-            return helper(node1.left, )
+            //return helper(node1.left, )
 
-        }
+        }*/
         return false
 
 
