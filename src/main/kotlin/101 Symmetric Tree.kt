@@ -19,8 +19,8 @@ class Solution19 {
         if(node1==null && node2==null){
             return true
         }
-        val node1Value = node1?.`val`
-        val node2Value = node2?.`val`
+        val node1Value = node1?.`val`;
+        val node2Value = node2?.`val`;
 
         if(node1Value==node2Value){
             val isLeftTreeSymmetric = helper(node1?.left, node2?.left)
