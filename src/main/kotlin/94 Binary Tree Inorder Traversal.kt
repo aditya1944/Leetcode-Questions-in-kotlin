@@ -1,34 +1,29 @@
 import java.util.*
+import kotlin.collections.ArrayList
 
-class Solution3{
-    class TreeNode(var `val`: Int){
-        var left: TreeNode? = null;
-        var right: TreeNode? = null;
+class Solution3 {
+    class TreeNode(var `val`: Int) {
+        var left: TreeNode? = null
+        var right: TreeNode? = null
     }
 
-    fun inorderTraversal(root: TreeNode?): List<Int>{
-        val returnList = mutableListOf<Int>();
-        if(root==null){
-            return returnList;
+    fun inorderTraversal(root: TreeNode?): List<Int> {
+        var node = root
+        val stack = Stack<TreeNode>()
+        while (node != null) {
+            stack.add(node)
+            node = node.left
         }
-        val stack = Stack<TreeNode>();
-        insertLeft(root, stack)
-        while(stack.isNotEmpty()){
-            val topNode = stack.pop();
-            returnList.add(topNode.`val`);
-            if(topNode.right!=null){
-                insertLeft(topNode.right!!, stack);
+        val returnVector = ArrayList<Int>()
+        while (stack.isEmpty()) {
+            val topNode = stack.pop()
+            returnVector.add(topNode.`val`)
+            var rightTreeRoot = topNode.right
+            while (rightTreeRoot != null) {
+                stack.push(rightTreeRoot)
+                rightTreeRoot = rightTreeRoot?.left
             }
         }
-        return returnList;
-    }
-
-    private fun insertLeft(root: TreeNode, stack: Stack<TreeNode>){
-        var node = root;
-        stack.push(node);
-        while(node.left!=null){
-            stack.push(node.left);
-            node = node.left!!;
-        }
+        return returnVector.toList()
     }
 }
