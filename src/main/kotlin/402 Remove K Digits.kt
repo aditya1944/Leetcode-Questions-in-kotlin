@@ -1,48 +1,47 @@
-import java.util.Stack
-import kotlin.text.StringBuilder
+import java.util.*
 
 fun removeKdigits(num: String, k: Int): String {
-    if(num.length==k){
-        return "0";
+    if (num.length == k) {
+        return "0"
     }
-    var popRemaining = k;
-    val stack = Stack<Char>();
-    for(char in num){
-        if(stack.empty() || stack.peek()<=char){
-            stack.push(char);
-        }else{
+    var popRemaining = k
+    val stack = Stack<Char>()
+    for (char in num) {
+        if (stack.empty() || stack.peek() <= char) {
+            stack.push(char)
+        } else {
             //top element in stack is greater than the current element.
-            while(!stack.empty() && stack.peek()>char && popRemaining>0){
-                stack.pop();
-                --popRemaining;
+            while (!stack.empty() && stack.peek() > char && popRemaining > 0) {
+                stack.pop()
+                --popRemaining
             }
-            stack.push(char);
+            stack.push(char)
         }
     }
-    while(popRemaining>0 && !stack.empty()){
-        stack.pop();
-        --popRemaining;
+    while (popRemaining > 0 && !stack.empty()) {
+        stack.pop()
+        --popRemaining
     }
-    var returnString = StringBuilder();
-    while(!stack.empty()){
+    var returnString = StringBuilder()
+    while (!stack.empty()) {
         returnString.append(stack.peek())
-       stack.pop();
+        stack.pop()
     }
-    while(returnString.isNotEmpty() && returnString.last()=='0'){
-        returnString.deleteCharAt(returnString.length-1);
+    while (returnString.isNotEmpty() && returnString.last() == '0') {
+        returnString.deleteCharAt(returnString.length - 1)
     }
-    if(returnString.isEmpty()){
-        return "0";
+    if (returnString.isEmpty()) {
+        return "0"
     }
 
-    returnString = returnString.reverse();
+    returnString = returnString.reverse()
 
-    return returnString.toString();
-};
+    return returnString.toString()
+}
 
 
-fun main(){
-    print(removeKdigits("10", 1));
+fun main() {
+    print(removeKdigits("10", 1))
 }
 
 /**

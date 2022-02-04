@@ -10,36 +10,36 @@ class Solution12 {
 
 
     fun connect(root: Node?): Node? {
-        if(root==null){
-            return root;
+        if (root == null) {
+            return root
         }
-        val queue = LinkedList<Node>();
-        queue.addLast(root);
-        while(queue.isNotEmpty()){
+        val queue = LinkedList<Node>()
+        queue.addLast(root)
+        while (queue.isNotEmpty()) {
             var currentLevelSize = queue.size
-            while(currentLevelSize>0){
+            while (currentLevelSize > 0) {
                 val top = queue.removeFirst()
-                if(top.left!=null){
+                if (top.left != null) {
                     queue.addLast(top.left)
                 }
-                if(top.right!=null){
+                if (top.right != null) {
                     queue.addLast(top.right)
                 }
                 --currentLevelSize
-                if(currentLevelSize!=0){
-                    top.next = queue.first;
+                if (currentLevelSize != 0) {
+                    top.next = queue.first
                 }
             }
         }
-        return root;
+        return root
     }
 }
 
 
-fun main(){
-    val root = Solution12.Node(1);
-    root.left = Solution12.Node(2);
-    root.right = Solution12.Node(3);
+fun main() {
+    val root = Solution12.Node(1)
+    root.left = Solution12.Node(2)
+    root.right = Solution12.Node(3)
 
     Solution12().connect(root)
 }

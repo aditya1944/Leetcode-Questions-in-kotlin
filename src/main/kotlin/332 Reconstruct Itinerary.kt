@@ -1,6 +1,4 @@
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 
 fun findItinerary(tickets: List<List<String>>): List<String> {

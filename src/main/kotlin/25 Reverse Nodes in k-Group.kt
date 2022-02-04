@@ -4,6 +4,6 @@ class ListNode(var `val`: Int) {
 
 
 fun reverseKGroup(head: ListNode?, k: Int): ListNode? {
-    return null;
+    return null
 
 }

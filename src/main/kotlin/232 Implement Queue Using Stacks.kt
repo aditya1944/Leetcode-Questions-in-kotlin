@@ -1,6 +1,6 @@
 import java.util.*
 
-class MyQueue() {
+class MyQueue {
 
     private val s1 = Stack<Int>()
     private val s2 = Stack<Int>()
@@ -12,8 +12,8 @@ class MyQueue() {
 
     /** Removes the element from in front of queue and returns that element. */
     fun pop(): Int {
-        if(s2.isEmpty()){
-            while(s1.isNotEmpty()){
+        if (s2.isEmpty()) {
+            while (s1.isNotEmpty()) {
                 s2.push(s1.pop())
             }
         }
@@ -22,8 +22,8 @@ class MyQueue() {
 
     /** Get the front element. */
     fun peek(): Int {
-        if(s2.isEmpty()){
-            while(s1.isNotEmpty()){
+        if (s2.isEmpty()) {
+            while (s1.isNotEmpty()) {
                 s2.push(s1.pop())
             }
         }
@@ -32,7 +32,7 @@ class MyQueue() {
 
     /** Returns whether the queue is empty. */
     fun empty(): Boolean {
-        if(s1.isEmpty() && s2.isEmpty()){
+        if (s1.isEmpty() && s2.isEmpty()) {
             return true
         }
         return false

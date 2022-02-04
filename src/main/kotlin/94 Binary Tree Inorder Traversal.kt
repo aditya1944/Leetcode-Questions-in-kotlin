@@ -1,5 +1,4 @@
 import java.util.*
-import kotlin.collections.ArrayList
 
 class Solution3 {
     class TreeNode(var `val`: Int) {
@@ -21,7 +20,7 @@ class Solution3 {
             var rightTreeRoot = topNode.right
             while (rightTreeRoot != null) {
                 stack.push(rightTreeRoot)
-                rightTreeRoot = rightTreeRoot?.left
+                rightTreeRoot = rightTreeRoot.left
             }
         }
         return returnVector.toList()

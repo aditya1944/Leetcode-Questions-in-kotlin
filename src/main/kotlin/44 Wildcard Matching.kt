@@ -46,6 +46,6 @@ fun helper(s: String, p: String, sIndex: Int, pIndex: Int, cache: Array<Array<In
     return result
 }
 
-fun main(){
-    println(isMatch("aa","*"))
+fun main() {
+    println(isMatch("aa", "*"))
 }

@@ -1,5 +1,3 @@
-import java.util.*
-
 fun longestIncreasingPath(matrix: Array<IntArray>): Int {
     val rows = matrix.size
     val cols = matrix[0].size
@@ -11,7 +9,7 @@ fun longestIncreasingPath(matrix: Array<IntArray>): Int {
             maxPath = Math.max(dfs(matrix, rowIndex, colIndex, dp), maxPath)
         }
     }
-    
+
     return maxPath
 }
 

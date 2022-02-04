@@ -10,7 +10,7 @@ fun numIslands(grid: Array<CharArray>): Int {
             }
         }
     }
-    return largestIsland;
+    return largestIsland
 }
 
 fun dfs(grid: Array<CharArray>, rowIndex: Int, colIndex: Int, visited: Array<Array<Boolean>>): Int {
@@ -39,5 +39,5 @@ fun dfs(grid: Array<CharArray>, rowIndex: Int, colIndex: Int, visited: Array<Arr
     if (downSide != null && downSide == '1') {
         totalIslands += dfs(grid, rowIndex + 1, colIndex, visited)
     }
-    return totalIslands;
+    return totalIslands
 }

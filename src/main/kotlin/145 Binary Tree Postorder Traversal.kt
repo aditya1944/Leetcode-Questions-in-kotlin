@@ -9,21 +9,21 @@ class Solution10 {
 
     fun postorderTraversal(root: TreeNode?): List<Int> {
         val list = LinkedList<Int>()
-        if(root==null){
-            return list;
+        if (root == null) {
+            return list
         }
-        val stack = Stack<TreeNode>();
-        stack.push(root);
-        while(stack.isNotEmpty()){
-            val top = stack.pop();
-            list.addFirst(top.`val`);
-            if(top.left!=null){
-                stack.add(top.left);
+        val stack = Stack<TreeNode>()
+        stack.push(root)
+        while (stack.isNotEmpty()) {
+            val top = stack.pop()
+            list.addFirst(top.`val`)
+            if (top.left != null) {
+                stack.add(top.left)
             }
-            if(top.right!=null){
-                stack.add(top.right);
+            if (top.right != null) {
+                stack.add(top.right)
             }
         }
-        return list;
+        return list
     }
 }

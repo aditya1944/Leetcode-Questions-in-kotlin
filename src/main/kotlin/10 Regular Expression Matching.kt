@@ -1,4 +1,4 @@
-class Solution20{
+class Solution20 {
     fun isMatch(s: String, p: String): Boolean {
         val cache = Array(s.length) { Array(p.length) { -1 } }
         return helper(s, p, 0, 0, cache)

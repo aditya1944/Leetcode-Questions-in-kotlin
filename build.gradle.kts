@@ -1,18 +1,25 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.30"
+    kotlin("jvm") version "1.6.10"
 }
 
-group = "me.adityakumar"
-version = "1.0-SNAPSHOT"
+//subprojects{
 
-repositories {
-    mavenCentral()
-}
+    apply {
+        plugin("org.jetbrains.kotlin.jvm")
+    }
+
+    group = "me.adityakumar"
+    version = "1.0-SNAPSHOT"
+
+    repositories {
+        mavenCentral()
+    }
 
 
 
-tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "13"
-}
+    tasks.withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "17"
+    }
+//}

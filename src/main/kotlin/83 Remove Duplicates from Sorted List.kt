@@ -1,5 +1,3 @@
-
-
 class Solution14 {
     class ListNode(var `val`: Int) {
         var next: ListNode? = null
@@ -7,10 +5,10 @@ class Solution14 {
 
     fun deleteDuplicates(head: ListNode?): ListNode? {
         var ptr1: ListNode? = head
-        while(ptr1!=null){
-            if(ptr1.next!=null && ptr1.`val`==ptr1.next!!.`val`){
+        while (ptr1 != null) {
+            if (ptr1.next != null && ptr1.`val` == ptr1.next!!.`val`) {
                 ptr1.next = ptr1.next!!.next
-            }else{
+            } else {
                 ptr1 = ptr1.next
             }
         }

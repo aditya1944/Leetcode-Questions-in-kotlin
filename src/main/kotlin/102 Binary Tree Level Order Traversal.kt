@@ -10,38 +10,38 @@ import java.util.*
  *     var right: TreeNode? = null
  * }
  */
-class Solution18{
+class Solution18 {
 
-    class TreeNode(var `val`: Int){
+    class TreeNode(var `val`: Int) {
         var left: TreeNode? = null
         var right: TreeNode? = null
     }
 
     fun levelOrder(root: TreeNode?): List<List<Int>> {
         val returnList = mutableListOf<MutableList<Int>>()
-        if(root==null){
+        if (root == null) {
             return returnList
         }
-        val queue = LinkedList<TreeNode>();
+        val queue = LinkedList<TreeNode>()
         queue.addLast(root)
-        while(queue.isNotEmpty()) {
-            var currentQueueElementCount = queue.size;
+        while (queue.isNotEmpty()) {
+            var currentQueueElementCount = queue.size
             val currentLevelNodeList = mutableListOf<Int>()
-            while(currentQueueElementCount!=0) {
+            while (currentQueueElementCount != 0) {
                 val top = queue.removeFirst()
                 currentLevelNodeList.add(top.`val`)
                 val leftNode = top.left
-                if(leftNode!=null){
+                if (leftNode != null) {
                     queue.addLast(top.left)
                 }
                 val rightNode = top.right
-                if(rightNode!=null){
+                if (rightNode != null) {
                     queue.addLast(rightNode)
                 }
                 --currentQueueElementCount
             }
             returnList.add(currentLevelNodeList)
         }
-        return returnList;
+        return returnList
     }
 }

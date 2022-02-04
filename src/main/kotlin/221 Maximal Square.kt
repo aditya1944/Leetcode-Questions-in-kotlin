@@ -1,4 +1,5 @@
-import kotlin.math.*
+import kotlin.math.max
+import kotlin.math.min
 
 fun maximalSquare(matrix: Array<CharArray>): Int {
     val rows = matrix.size

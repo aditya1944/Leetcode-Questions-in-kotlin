@@ -1,6 +1,4 @@
 import java.util.*
-import kotlin.collections.HashMap
-import kotlin.collections.HashSet
 
 fun calcEquation(equations: List<List<String>>, values: DoubleArray, queries: List<List<String>>): DoubleArray {
     val adjacencylist = HashMap<String, HashMap<String, Double>>()
